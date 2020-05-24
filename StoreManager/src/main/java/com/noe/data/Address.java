@@ -19,6 +19,13 @@ public class Address {
 	private String interior;
 	private String description;
 	
+	
+	public long getId() {
+		return id;
+	}
+	public void setId(long id) {
+		this.id = id;
+	}
 	public String getCountry() {
 		return country;
 	}

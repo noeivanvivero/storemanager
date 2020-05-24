@@ -17,7 +17,7 @@ public class InventoryAdjustment {
 	private Employee employee;
 	@ManyToOne
 	private AdjustmentType type;
-	private Long cantidad;
+	private Long quantity;
 	public long getId() {
 		return id;
 	}
@@ -42,17 +42,17 @@ public class InventoryAdjustment {
 	public void setType(AdjustmentType type) {
 		this.type = type;
 	}
-	public Long getCantidad() {
-		return cantidad;
+	public Long getQuantity() {
+		return quantity;
 	}
-	public void setCantidad(Long cantidad) {
-		this.cantidad = cantidad;
+	public void setQuantity(Long cantidad) {
+		this.quantity = cantidad;
 	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((cantidad == null) ? 0 : cantidad.hashCode());
+		result = prime * result + ((quantity == null) ? 0 : quantity.hashCode());
 		result = prime * result + ((employee == null) ? 0 : employee.hashCode());
 		result = prime * result + (int) (id ^ (id >>> 32));
 		result = prime * result + ((inventory == null) ? 0 : inventory.hashCode());
@@ -68,10 +68,10 @@ public class InventoryAdjustment {
 		if (getClass() != obj.getClass())
 			return false;
 		InventoryAdjustment other = (InventoryAdjustment) obj;
-		if (cantidad == null) {
-			if (other.cantidad != null)
+		if (quantity == null) {
+			if (other.quantity != null)
 				return false;
-		} else if (!cantidad.equals(other.cantidad))
+		} else if (!quantity.equals(other.quantity))
 			return false;
 		if (employee == null) {
 			if (other.employee != null)
@@ -95,14 +95,14 @@ public class InventoryAdjustment {
 	@Override
 	public String toString() {
 		return "InventoryAdjustment [id=" + id + ", inventory=" + inventory + ", employee=" + employee + ", type="
-				+ type + ", cantidad=" + cantidad + "]";
+				+ type + ", cantidad=" + quantity + "]";
 	}
 	public InventoryAdjustment(Inventory inventory, Employee employee, AdjustmentType type, Long cantidad) {
 		super();
 		this.inventory = inventory;
 		this.employee = employee;
 		this.type = type;
-		this.cantidad = cantidad;
+		this.quantity = cantidad;
 	}
 	public InventoryAdjustment() {
 		super();
